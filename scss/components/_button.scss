@@ -1,0 +1,84 @@
+$btn-padding: 0.75rem 1.2rem !default;
+$btn-font-size: 1.125rem !default;
+$btn-line-height: 1.5 !default;
+$btn-small-font-size: .95rem !default;
+$btn-small-padding: 0.5rem 1rem !default;
+$btn-large-font-size: 1.5rem !default;
+$btn-large-padding: 1rem 1.75rem !default;
+
+:root {
+    --btn-background: #{$secondary};
+    --btn-text: #{$on-secondary};
+    --btn-padding:#{$btn-padding};
+    --btn-font-size: #{$btn-font-size};
+    --btn-line-height: #{$btn-line-height};
+    --btn-hover-background: #{lighten($secondary, 10%)};
+}
+
+.u-btn {
+  background-color: var(--btn-background);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: var(--btn-text);
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: var(--btn-font-size);
+  font-weight: 600;
+  line-height: var(--btn-line-height);
+  padding: var(--btn-padding);
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.u-btn:hover {
+  background-color: var(--btn-hover-background, inherit);
+}
+
+.u-btn:focus {
+  box-shadow: none;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+// Primary variant
+.u-btn--primary {
+    --btn-background: #{$primary};
+    --btn-text: #{$on-primary};
+    --btn-hover-background: #{lighten($primary, 10%)};
+}
+
+// Disabled variant
+.u-btn--disabled {
+    --btn-background: rgb(245, 245, 245);
+    --btn-text: rgb(158, 158, 158);
+}
+
+// Small variant
+.u-btn--small {
+    --btn-font-size: #{$btn-small-font-size};
+    --btn-padding: #{$btn-small-padding};
+}
+
+// Large variant
+.u-btn--large {
+    --btn-font-size: #{$btn-large-font-size};
+    --btn-padding: #{$btn-large-padding};
+}
+
+@media (min-width: 768px) {
+  .u-btn {
+    --btn-padding: 0.75rem 1.5rem;
+  }
+}
